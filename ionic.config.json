@@ -1,0 +1,8 @@
+{
+  "name": "desafio-mais-vida-app-basic",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
