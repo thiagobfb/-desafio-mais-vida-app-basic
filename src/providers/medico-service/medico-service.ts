@@ -16,7 +16,7 @@ export class MedicoServiceProvider {
 
   private medicoUrl: string;
 
-  constructor(public http: HttpClient, public requestOptions: RequestOptions) {
+  constructor(public http: HttpClient, public requestOptions: RequestOptions, public httpProvider: Http) {
     this.medicoUrl = Utils.getUrlBackend() + "medicos/";
   }
 
@@ -29,11 +29,16 @@ export class MedicoServiceProvider {
   }
 
   find(id: number): Observable<Medico> {
-    return this.http.get(`${this.medicoUrl}${id}`);
+    return this.httpProvider.get(`${this.medicoUrl}${id}`);
   }
 
   query(req?: any): Observable<any> {
     return this.http.get(this.medicoUrl);
+  }
+
+  public getMedicos() {
+    return this.httpProvider.get(this.medicoUrl)
+        .map(res => res.json());
   }
 
   delete(id: number): Observable<any> {

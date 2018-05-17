@@ -20,6 +20,7 @@ import { InterceptorHttpService } from '../providers/InterceptorHttpService';
 import { PerfilServiceProvider } from '../providers/perfil-service/perfil-service';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { MedicoServiceProvider } from '../providers/medico-service/medico-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MedicoServiceProvider } from '../providers/medico-service/medico-servic
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
